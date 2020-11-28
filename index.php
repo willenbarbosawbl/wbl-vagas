@@ -3,6 +3,10 @@
 
     use \App\Entity\Vaga;
     use \App\Db\Pagination;
+    use \App\Session\Login;
+
+    //OBRIGA O USUÁRIO A ESTAR LOGADO
+    Login::requireLogin();
 
     //Buscar
     $buscar = filter_input(INPUT_GET, 'buscar', FILTER_SANITIZE_STRING);

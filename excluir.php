@@ -1,6 +1,10 @@
 <?php
     require __DIR__."/vendor/autoload.php";
     use \App\Entity\Vaga;
+    use \App\Session\Login;
+
+    //OBRIGA O USUÁRIO A ESTAR LOGADO
+    Login::requireLogin();
 
     define("TITLE", "Confirmar Exclusão da Vaga");
 
