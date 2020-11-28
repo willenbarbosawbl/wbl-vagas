@@ -99,6 +99,19 @@
         }
 
         /**
+         * Método responsável por obter a quantidade de vagas do banco de dados
+         * Method responsible for obtaining the number of vacancies in the database
+         * @param string $where
+         * @return integer
+         */
+        public static function getQuantidadeVagas($where = null){
+            return (new Database('wbl_vagas'))->select($where, null, null, 'COUNT(*) as qtd')
+                                              ->fetchObject()
+                                              ->qtd;
+
+        }
+
+        /**
          * Método responsável por buscar uma vaga com base em seu id
          * Method responsible for seeking a vacancy based on your id
          * @param integer $id
